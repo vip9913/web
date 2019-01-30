@@ -4,7 +4,10 @@
 			font-size: 36px;
 			text-align: center;
 		}
-		.button {
+.button {
 			padding: : 10px 30px;
 			font-size: 36px;
 		}
+iframe{
+	display: none;
+}

@@ -1,8 +1,6 @@
 <?php
 	$dsn="mysql:host=127.0.0.1; dbname=MYBASE; charset=UTF8";	
-	$pdo=new PDO($dsn, "root", "7f651m");
-	if (isset($_POST["submit"])) 
-		$pdo->exec("UPDATE webtable SET counter=counter+1");
+	$pdo=new PDO($dsn, "root", "7f651m");	
 	$res=$pdo->query("SELECT counter FROM webtable");
 	$counter=$res->fetch()[0];
 ?>
@@ -14,9 +12,10 @@
 	</head>
 	<body>
 		<h1>Counter</h1>	
-		<form method="post">
-			<input class="number" type="text" value="<?=$counter ?>" />
+		<form method="post" target="plus" action="plus.php">
+			<input id="id_number" class="number" type="text" value="<?=$counter ?>" />
 			<input name="submit" class="button" type="submit" />		
 		</form>
+		<iframe name="plus"></iframe>
 	</body>
 </html>
